@@ -3,10 +3,7 @@ import React, { useEffect } from 'react';
 import Footer from '../organisms/Footer';
 import Header from '../organisms/Header';
 import img_log from '../../assets/images/log.png'
-// assets
-// import '../../assets/scss/style.scss'
 import style from '../../assets/scss/style.module.scss'
-// redux
 import { login, logout, selectUser } from '../../common/redux/userSlice'
 import { useSelector, useDispatch } from 'react-redux'
 
@@ -15,6 +12,7 @@ const Top: React.FC = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
+    console.log(process.env.PROJECT_ID)
     dispatch(
       login({
         uid: "test_uid",
