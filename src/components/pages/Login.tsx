@@ -1,5 +1,5 @@
 import * as React from 'react';
-import Loginform from '../Molecules/LoginForm';
+import Loginform from '../molecules/LoginForm';
 import Footer from '../organisms/Footer';
 import Header from '../organisms/Header';
 

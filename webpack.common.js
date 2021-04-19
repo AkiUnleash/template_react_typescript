@@ -4,18 +4,18 @@ const MODE = "development";
 const enabledSourceMap = MODE === "development";
 // plugin
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const Dotenv = require('dotenv-webpack');
 
 module.exports = {
-  mode: MODE,
   entry: "./src/main.tsx",
   output: {
     path: `${__dirname}/dist`,
     filename: "main.js",
+    clean: true
   },
   devServer: {
     contentBase: path.resolve(__dirname, 'dist'),
-    publicPath: '/dist/',
-    port: 3030,
+    port: 5000,
     open: true,
     historyApiFallback: true, // without no routing
   },
@@ -47,5 +47,6 @@ module.exports = {
       filename: 'index.html',
       template: 'src/html/index.html',
     }),
+    new Dotenv(),
   ]
 };

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Textfield from '../atoms/Textfield';
+import { browserHistory } from "../../history"
 
 const Loginform: React.FC = () => {
   const [email, setEmail] = useState("")
@@ -27,6 +28,7 @@ const Loginform: React.FC = () => {
         onClick={(e: React.FormEvent) => {
           e.preventDefault();
           console.log(email, password);
+          browserHistory.push('/')
         }}>Submit</button>
 
     </form>
